@@ -1,0 +1,250 @@
+/* Pretendard 웹폰트 적용 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+body {
+    font-family: 'Pretendard', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #f4f6fc, #ffffff);
+    color: #2e2e2e;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    flex: 1 1 320px;
+    max-width: 600px;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+select {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    background-color: #f9fafb;
+    transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #5c9cff;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(92, 156, 255, 0.15);
+}
+
+.error-msg {
+    color: #ef4444;
+    font-size: 14px;
+    display: none;
+}
+
+.temp-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.temp-buttons button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    font-size: 16px;
+    border-radius: 14px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+.ice {
+    background: linear-gradient(135deg, #60aaff, #478de0);
+}
+
+.hot {
+    background: linear-gradient(135deg, #ff6b6b, #e74c3c);
+}
+
+.temp-buttons button:hover {
+    opacity: 0.95;
+    transform: scale(1.02);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border-left: 6px solid #5c9cff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.drink-info {
+    flex: 1;
+    padding-left: 12px;
+}
+
+.delete-form {
+    margin: 0;
+}
+
+.delete-button {
+    background: #c4c4c4;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.delete-button:hover {
+    background: #a0a0a0;
+}
+
+.ice-border {
+    border-left: 6px solid #5c9cff;
+}
+
+.hot-border {
+    border-left: 6px solid #ff5c5c;
+}
+
+.cafe-select {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.cafe-option {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+    text-align: center;
+}
+
+.cafe-option:hover {
+    background-color: #e0e0e0;
+}
+
+input[name="location"] {
+    display: none;
+}
+
+input[name="location"]:checked+.cafe-option {
+    border-color: #1e90ff;
+    background-color: #dceeff;
+    font-weight: bold;
+}
+
+
+#suggestions {
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 160px;
+    overflow-y: auto;
+    margin-top: 5px;
+}
+
+#suggestions div {
+    padding: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+#suggestions div:hover,
+.autocomplete-item.active {
+    background-color: #e6f2ff;
+}
+
+.menu-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-img:hover {
+    transform: scale(1.04);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-size: 20px;
+    }
+
+    input,
+    select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .temp-buttons button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
